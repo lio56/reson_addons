@@ -8,10 +8,10 @@
             <xpath expr="//div[@id='pos-loyalty']" position="after">
                 <div class="col-12 col-lg-6 o_setting_box" id="show_all_discounts">
                     <div class="o_setting_right_pane">
-                        <field name="show_discount_popup_all_users"/>
+                        <field name="show_discount_popup"/>
                     </div>
                     <div class="o_setting_right_pane" title="Show available discount list (popup)">
-                        <label for="show_discount_popup_all_users"/>
+                        <label for="show_discount_popup"/>
 
                     </div>
                 </div>

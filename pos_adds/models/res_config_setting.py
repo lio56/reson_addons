@@ -9,7 +9,7 @@ class ResConfigSettings(models.TransientModel):
     pos_show_coupon_programme = fields.Boolean("Available discount codes",
                                                help="Allow user to show avaiable discount codes in PoS.")
     discounts_codes_allowed_users = fields.Selection([('all_users', 'All Users'),
-                                                          ('manager', 'Manager only'),], "Allowed users", default='all_users', config_parameter="pos_adds.discounts_codes_allowed_users",
+                                                          ('manager', 'Manager only'),], "Allowed users", default='all_users',config_parameter="pos_adds.discounts_codes_allowed_users",
                                                          help="Persons that can see the avaiable discount codes button in the enter discount code popup.")
 
     @api.model

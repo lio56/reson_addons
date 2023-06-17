@@ -43,8 +43,10 @@ odoo.define('pos_adds.CouponCodePopup', function(require) {
             const self = this;
 
             // Retrieve value of 'show_discount_popup_all_users' field in pos settings,
-            // which indicate whether the restriction is activated or not (True means there is no restriction)
-            const allow_show_discount = param.show_discount_popup_all_users;
+            // which indicate whether the restriction is activated or not
+            const allow_show_discount = param.show_discount_popup;
+
+            console.log(allow_show_discount);
 
             // Check if the current user has a pos manager group access
             const hasGroup = await rpc.query({
@@ -55,7 +57,7 @@ odoo.define('pos_adds.CouponCodePopup', function(require) {
 
             // When restriction is activated and the user in not a manager
             // action : hide the popup button
-            if (!allow_show_discount && !hasGroup) {
+            if (allow_show_discount == 'manager' && !hasGroup || allow_show_discount == 'none') {
                 const documentViewerElements = self.el.querySelector('#custom_coupon_list');
                 documentViewerElements.classList.add('o_hidden');
                 documentViewerElements.style.display = 'none';
