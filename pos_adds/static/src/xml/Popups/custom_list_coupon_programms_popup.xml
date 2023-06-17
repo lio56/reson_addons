@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="CouponProgramsPopup" owl="1">
+
+        <div role="dialog" class="modal-dialog">
+
+            <div class="popup popup-couponproducts">
+                <p class="title">
+                    <t t-esc="props.title"/>
+                </p>
+                <div class="order">
+
+                <ul>
+                <t t-foreach="props.coupons_prog" t-as="item" t-key="item.id">
+                <li class='orderline program-reward fix_product' t-on-click="() => this.trigger('choose-coupon', item)">
+
+                    <span style="product-name">
+                        <t t-esc="item.name"/>
+                        Holder<t t-esc="item.discount_percentage"/>% Discount
+                    </span>
+
+                    <ul class="info-list">
+                        <li class="info">
+                            <t t-esc="item.name"> </t>
+                        </li>
+
+                        <li class="info">
+                            <t t-esc="item.reward_description"> </t>
+                        </li>
+                    </ul>
+
+                    <!--                </div>-->
+
+                </li>
+
+            </t>
+                </ul>
+
+            </div>
+
+                <div class="footer">
+                <div class="button cancel" t-on-click="cancel">
+                <t t-esc="props.cancelText"/>
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+    </t>
+</templates>

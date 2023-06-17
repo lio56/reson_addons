@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+   <t t-name="CouponCodePopup" owl="1">
+       <div role="dialog" class="modal-dialog">
+           <div class="popup popup-couponproducts">
+               <p class="title">
+                   <t t-esc="props.title" />
+               </p>
+               <span class="body">
+
+                   <div>
+                       <div class="button icon"
+                            id = "custom_coupon_list"
+                            style="display: inline-block;margin: 0px -30px 10px 10px;float:left !important;"
+                            t-on-click="() => this.trigger('display_couponlist_popup')">
+                           <i class="fa fa-address-card" role="img" title="Open the money details popup"/>
+
+                       </div>
+                        <input type="text" placeholder="Gift card or Discount code" t-model="state.inputValue" t-ref="input"/>
+                   </div>
+
+
+               </span>
+               <div class="footer">
+                   <div class="button cancel" t-on-click="cancel">
+                       <t t-esc="props.cancelText" />
+                   </div>
+
+                   <div class="button confirm" t-on-click="confirm" style="float:left;margin-left:10px;">
+                       <t t-esc="props.confirmText" />
+                   </div>
+
+
+               </div>
+           </div>
+       </div>
+   </t>
+</templates>
